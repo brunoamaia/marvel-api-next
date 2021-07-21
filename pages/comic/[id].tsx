@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 
+import Box from '@material-ui/core/Box';
+
 import Head from '../../src/components/Head';
 import Header from '../../src/components/Header';
 import ComicDetailsComponent from '../../src/components/ListComicDetails';
@@ -37,8 +39,10 @@ export default function ComicDetails() {
         description="Página com insformações sobre os heróis da marvel"
         title={`${comicsDetails.title} | ${comicsDetails.id}`}
       />
-      <Header subtitle='COMIC: DETAILS' />
-      <ComicDetailsComponent />
+      <Box width="100%" sx={{ bgcolor: '#ebebeb' }} >
+        <Header subtitle='COMIC: DETAILS' />
+        <ComicDetailsComponent />
+      </Box>
     </>
   )
 }

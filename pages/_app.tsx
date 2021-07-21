@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <link rel="icon" href="/fav.ico" />
       </Head>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme} >
         <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>

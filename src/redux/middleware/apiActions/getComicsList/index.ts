@@ -1,7 +1,5 @@
 // @ts-nocheck
-import md5 from 'md5'
-
-import api from '../../../../services/api'
+import api, { token } from '../../../../services/api'
 
 import { getComicsList } from '../../../reducers/ComicsList'
 
@@ -32,32 +30,20 @@ interface responseProps {
 
 export const getDataHomepage = () => {
   return (dispatch: any) => {
+    const sessionData: string | null = sessionStorage.getItem('ComicsListData')
 
-    if (sessionStorage.getItem('ComicsListData')) {
+    if (sessionData !== null) {
       console.log("Dados do sessionStorage")
       dispatch(
-        getComicsList(JSON.parse(sessionStorage.getItem('ComicsListData')))
+        getComicsList(JSON.parse(sessionData))
       )
-
 
     } else {
       console.log("Dados da API")
-
-      const marvelApi = {
-        privateKey: process.env.NEXT_PUBLIC_MARVEL_API_PRIVATE_KEY,
-        publicKey: process.env.NEXT_PUBLIC_MARVEL_API_PUBLIC_KEY,
-        ts: 25 //Date.now()
-      }
-      const hash = md5(String(marvelApi.ts) + marvelApi.privateKey + marvelApi.publicKey)
-      const url = `
-        v1/public/comics
-        ?ts=${marvelApi.ts}
-        &apikey=${marvelApi.publicKey}
-        &hash=${hash}
-      `
+      const route = 'comics'
 
       api
-        .get(`${url.split(' ').join('')}`)
+        .get(`${route}${token}`)
         .then((response: ComicsListDataProps) => {
           const comicsList: Array<responseProps> = []
           for (let i = 0; i < response.data.data.results.length; i++) {
@@ -80,6 +66,5 @@ export const getDataHomepage = () => {
           console.log(error)
         })
     }
-
   }
 }

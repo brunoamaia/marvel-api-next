@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
+import Link from '../Link';
 
 interface responseProps {
   description: string,
@@ -56,7 +57,14 @@ export default function ListItemsOfHomePage() {
                 <Typography noWrap sx={{ flexGrow: 1 }} >
                   {comic.description}
                 </Typography>
-                <Button variant="contained" size="small">View more...</Button>
+                <Button 
+                  variant="contained" 
+                  component={Link} 
+                  noLinkStyle 
+                  href={`/comic/${comic.id}`}
+                >
+                  View more...
+                </Button>
               </CardContent>
             </Card>
           </Grid>

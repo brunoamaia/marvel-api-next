@@ -13,5 +13,5 @@ const INITIAL_STATE: Array<ComicsListProps> = []
 export const getComicsList = createAction('UPDATE_COMICS_LIST')
 
 export default createReducer(INITIAL_STATE, {
-  [getComicsList.type]: (state, action: AnyAction) => [...action.payload],
+  [getComicsList.type]: (state, action: AnyAction) => action.payload,
 })

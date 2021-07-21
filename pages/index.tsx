@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux'
 
-
 import Head from '../src/components/Head';
 import Header from '../src/components/Header';
 import ListItemsOfHomePage from '../src/components/ListItemsOfHomePage';

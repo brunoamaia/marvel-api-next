@@ -19,8 +19,8 @@ export default function Header({ isHomepage = false, subtitle }: HeaderProps) {
         {isHomepage ? (
           <Typography
             align="center"
-            variant="h3"
-            component="h1"
+            variant="h4"
+            component="h2"
             sx={{ flexGrow: 1, my: 'auto' }}
           >
             {subtitle}
@@ -34,7 +34,7 @@ export default function Header({ isHomepage = false, subtitle }: HeaderProps) {
               sx={{ backgroundColor: 'none', boxShadow: 0, mx: 'auto'}}
             >
               <Typography
-                variant="h3"
+                variant="h4"
                 component="h1"
               >
                 {subtitle}

@@ -35,17 +35,23 @@ export default function ListComicDetails() {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 2, py: 2 }}>
-      {comicsDetails ? (
-        <Grid container spacing={3}>
-          <Grid item xs={4}>
-            <Thumbnail  url={comicsDetails.thumbnail} />
-          </Grid>
-          <Grid item xs={8}>
-            <Text />
-          </Grid>
-        </Grid>
-      ) : (<Box height="500px" width="100%" />)
-      }
+      <Grid
+        container
+        spacing={{ xs: 1, sm: 2, md: 2, lg: 2, xl: 2 }}
+        columns={{ xs: 4, sm: 5, md: 12, lg: 12, xl: 12 }}
+      >
+        {comicsDetails ? (
+          <>
+            <Grid item xs={4} sm={4} md={5} xl={4}>
+              <Thumbnail url={comicsDetails.thumbnail} />
+            </Grid>
+            <Grid item xs={4} sm={5} md={7} xl={8}>
+              <Text />
+            </Grid>
+          </>
+        ) : (<Box height="500px" width="100%" />)
+        }
+      </Grid>
     </Container >
   )
 }

@@ -46,27 +46,24 @@ export default function Text() {
         {comicsDetails.title}
       </Typography>
 
-      <Typography variant="h5" component="h3" sx={{ py: 2 }}>
+      <Typography align='justify' variant="h5" component="h3" sx={{ py: 2 }}>
         {comicsDetails.description ?
           `${comicsDetails.description}` : 'Not has description.'
         }
       </Typography>
 
-      <Box sx={{ display: 'flex', py: 2 }}>
-        {publishedAt !== [] && (
-          <Typography
-            variant="h6"
-            component="h4"
-            sx={{ flexGrow: 1 }}
-          >
-            Published: {publishedAt[1]}-{publishedAt[2]}-{publishedAt[0]}
-          </Typography>
-        )}
-        <Typography variant="h6" component="h4" >
-          Id of Comic: {comicsDetails.id}
+      {publishedAt !== [] && (
+        <Typography
+          variant="h6"
+          component="h4"
+          sx={{ flexGrow: 1 }}
+        >
+          Published: {publishedAt[1]}-{publishedAt[2]}-{publishedAt[0]}
         </Typography>
-
-      </Box>
+      )}
+      <Typography variant="h6" component="h4" >
+        Id of Comic: {comicsDetails.id}
+      </Typography>
       <Creators team={comicsDetails.creators} />
     </Box>
   )

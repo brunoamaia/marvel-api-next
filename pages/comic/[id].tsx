@@ -41,7 +41,9 @@ export default function ComicDetails() {
       />
       <Box width="100%" sx={{ bgcolor: '#ebebeb' }} >
         <Header subtitle='COMIC: DETAILS' />
-        <ComicDetailsComponent />
+        <main>
+          <ComicDetailsComponent />
+        </main>
       </Box>
     </>
   )

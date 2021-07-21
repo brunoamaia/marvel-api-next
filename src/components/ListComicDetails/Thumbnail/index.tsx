@@ -1,4 +1,5 @@
 import CardMedia from '@material-ui/core/CardMedia';
+import Box from '@material-ui/core/Box';
 
 interface thumbnailProps {
   url: string,
@@ -6,14 +7,14 @@ interface thumbnailProps {
 
 export default function Thumbnail({ url }: thumbnailProps) {
   return (
-    <>
+    <Box sx={{ mx: 'auto', m: 1, p: 1, textAlign: 'center' }}>
       {url && (
         <CardMedia
-          sx={{ height: '550px', width: '100%', mx: 2 }}
+          sx={{ maxHeight: '550px', height: '500px', mx: 'auto' }}
           image={url}
-          title="Image title"
+          title="comic thumbnail"
         />
       )}
-    </>
+    </Box>
   )
 }

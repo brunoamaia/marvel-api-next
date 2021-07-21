@@ -1,9 +1,13 @@
 import { useSelector } from "react-redux"
 
 interface creatorsProps {
-  cover?: string,
-  penciller?: string,
-  writer: string,
+  colorist?: Array<string>,
+  cover?: Array<string>,
+  editor?: Array<string>,
+  inker?: Array<string>,
+  letterer?: Array<string>,
+  penciller?: Array<string>,
+  writer?: Array<string>,
 }
 
 type ReduxParams = {

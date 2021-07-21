@@ -15,11 +15,11 @@ export default function Home() {
 
   return (
     <>
-      <Head 
-        description="Página com insformações sobre os heróis da marvel" 
-        title="Marvel api**" 
+      <Head
+        description="Página com insformações sobre os heróis da marvel"
+        title="Marvel Comics"
       />
-      <Header subtitle="MARVEL: COMICS" />
+      <Header subtitle="MARVEL: COMICS" isHomepage />
       <main>
         <ListItemsOfHomePage />
       </main>

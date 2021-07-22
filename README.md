@@ -16,7 +16,17 @@ Também utilizei as seguintes tecnologias:
 
 Para iniciar a aplicação, é necessário instalar as bibliotecas e depois iniciar a execusão do projeto.
 
-- Para instalar as bibliotecas, utilize:
+- Para instalar as bibliotecas, criar o arquivo com suas credenciais da [Marvel API](https://developer.marvel.com/) e posteriormente, executar o projeto.
+
+Para que o projeto consiga ter acesso aos seus dados, é necessário cadastrar na [Marvel API](https://developer.marvel.com/) para ter suas chaves pública e privada. Com ambas, crie um arquivo com o nome <code>.env.local</code>
+Dentro deste arquivo, insira suas chaves do seguinte modo:
+
+```
+NEXT_PUBLIC_MARVEL_API_PUBLIC_KEY=
+NEXT_PUBLIC_MARVEL_API_PRIVATE_KEY=
+```
+
+- Após criar este arquivo, você pode instalar as bibliotecas, executanto:
 
 <code>yarn</code> ou <code>npm install</code> ou <code>npm i</code>
 
@@ -26,3 +36,5 @@ Para iniciar a aplicação, é necessário instalar as bibliotecas e depois inic
 
 Para ver seu funcionamento, abra a página em:
 http://localhost:3000/
+
+O projeto está configurado para criar páginas estáticas durante o processo de "build".

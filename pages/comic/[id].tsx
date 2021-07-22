@@ -36,7 +36,6 @@ export default function ComicDetails() {
   return (
     <>
       <Head
-        description="Página com insformações sobre os heróis da marvel"
         title={`${comicsDetails.title} | ${comicsDetails.id}`}
       />
       <Box width="100%" sx={{ bgcolor: '#ebebeb' }} >

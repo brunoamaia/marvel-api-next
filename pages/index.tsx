@@ -31,7 +31,6 @@ export default function Home({ comicsList }: staticGeneratorData) {
   return (
     <>
       <Head
-        description="Página com insformações sobre os heróis da marvel"
         title="Marvel Comics"
       />
       <Box width="100%" minHeight="100%" sx={{ bgcolor: '#ebebeb' }} >

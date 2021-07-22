@@ -38,7 +38,7 @@ export default function ListItemsOfHomePage({ comicsList }: staticGeneratorData)
         {comicsList && comicsList?.map((comic) => (
           <Grid
             item key={comic.id}
-            xs={12} sm={6} md={3}
+            xs={12} sm={6} md={4} lg={4} xl={3}
           >
             <Card
               sx={{ display: 'flex' }}

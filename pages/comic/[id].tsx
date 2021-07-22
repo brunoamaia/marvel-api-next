@@ -38,7 +38,7 @@ export default function ComicDetails() {
       <Head
         title={`${comicsDetails.title} | ${comicsDetails.id}`}
       />
-      <Box width="100%" sx={{ bgcolor: '#ebebeb' }} >
+      <Box width="100%" sx={{ bgcolor: '#ebebeb', minHeight: '100vh' }} >
         <Header subtitle='COMIC: DETAILS' />
         <main>
           <ComicDetailsComponent />

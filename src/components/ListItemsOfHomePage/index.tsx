@@ -11,6 +11,10 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Link from '../Link';
 
+import api, { token } from '../../services/api';
+import { GetStaticProps } from 'next';
+
+
 interface responseProps {
   description: string,
   id: number,
@@ -18,12 +22,15 @@ interface responseProps {
   thumbnail: string
 }
 
-type ReduxParams = {
-  apiComicsList: Array<responseProps>
-}
+// type ReduxParams = {
+//   apiComicsList: Array<responseProps>
+// }
 
-export default function ListItemsOfHomePage() {
-  const comicsList = useSelector((state: ReduxParams) => state.apiComicsList)
+interface staticGeneratorData {
+  comicsList: Array<responseProps>
+}
+export default function ListItemsOfHomePage({ comicsList }: staticGeneratorData) {
+  // const comicsList = useSelector((state: ReduxParams) => state.apiComicsList)
 
   return (
     <Container maxWidth="xl" sx={{ mt: 5 }}>
@@ -57,10 +64,10 @@ export default function ListItemsOfHomePage() {
                 <Typography noWrap sx={{ flexGrow: 1 }} >
                   {comic.description}
                 </Typography>
-                <Button 
-                  variant="contained" 
-                  component={Link} 
-                  noLinkStyle 
+                <Button
+                  variant="contained"
+                  component={Link}
+                  noLinkStyle
                   href={`/comic/${comic.id}`}
                 >
                   View more...

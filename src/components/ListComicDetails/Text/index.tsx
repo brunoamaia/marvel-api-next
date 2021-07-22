@@ -27,8 +27,18 @@ type ReduxParams = {
   }
 }
 
-export default function Text() {
-  const comicsDetails = useSelector((state: ReduxParams) => state.apiComicsDetails)
+interface staticGeneratorData {
+  comicsDetails: {
+    creators: creatorsProps,
+    description: string,
+    published: string,
+    id: number,
+    thumbnail: string,
+    title: string,
+  }
+}
+export default function Text({comicsDetails}: staticGeneratorData) {
+  // const comicsDetails = useSelector((state: ReduxParams) => state.apiComicsDetails)
 
   const [publishedAt, setPublishedAt] = useState<string[]>([])
 

@@ -7,7 +7,6 @@ import Grid from '@material-ui/core/Grid';
 import Text from './Text'
 import Thumbnail from './Thumbnail'
 
-
 interface creatorsProps {
   colorist?: Array<string>,
   cover?: Array<string>,
@@ -29,8 +28,18 @@ type ReduxParams = {
   }
 }
 
-export default function ListComicDetails() {
-  const comicsDetails = useSelector((state: ReduxParams) => state.apiComicsDetails)
+interface staticGeneratorData {
+  comicsDetails: {
+    creators: creatorsProps,
+    description: string,
+    published: string,
+    id: number,
+    thumbnail: string,
+    title: string,
+  }
+}
+export default function ListComicDetails({ comicsDetails }: staticGeneratorData) {
+  // const comicsDetails = useSelector((state: ReduxParams) => state.apiComicsDetails)
 
   return (
     <Container maxWidth="lg" sx={{ mt: 2, py: 2 }}>
@@ -45,7 +54,7 @@ export default function ListComicDetails() {
               <Thumbnail url={comicsDetails.thumbnail} />
             </Grid>
             <Grid item xs={4} sm={5} md={7} xl={8}>
-              <Text />
+              <Text comicsDetails={comicsDetails} />
             </Grid>
           </>
         ) : (<Box height="500px" width="100%" />)
